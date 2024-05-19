@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: service-order
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: db_products
+      username: mongo
+      password: gustavo
+      authentication-database: admin

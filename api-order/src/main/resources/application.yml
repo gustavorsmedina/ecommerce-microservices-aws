@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: service-order
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_orders
+    username: postgres
+    password: gustavo
+  jpa:
+#    show-sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-2
+sns:
+  topic:
+    order: order_placed_topic
+resilience4j:
+  circuitbreaker:
+    instances:
+      save-order:
+        sliding-window-size: 3
+        minimum-number-of-calls: 2
+        wait-duration-in-open-state: 50s

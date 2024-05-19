@@ -1,0 +1,19 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: service-order-consumer
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-2
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_orders
+    username: postgres
+    password: gustavo
+sqs:
+  queue:
+    payment: payment_order_queue

@@ -1,0 +1,18 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: service-payment
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-2
+sqs:
+  queue:
+    order: order_payment_queue
+sns:
+  topic:
+    payment: payment_processed_topic

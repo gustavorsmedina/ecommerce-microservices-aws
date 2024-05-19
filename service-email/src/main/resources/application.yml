@@ -1,0 +1,27 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: service-email
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-2
+sqs:
+  queue:
+    order: order_email_queue
+    payment: payment_email_queue
